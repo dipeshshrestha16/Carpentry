@@ -8,7 +8,8 @@ const projects = [
     description: 'Master bedroom fitted wardrobe with sliding doors and internal organiser.',
   },
   {
-    image: 'https://images.unsplash.com/photo-1556909142-f5a03fca2e9e?auto=format&fit=crop&w=500&h=350&q=80',
+    // Fixed — previous URL (photo-1556909142-f5a03fca2e9e) was broken
+    image: 'https://images.unsplash.com/photo-1556909172-54557c7e4fb7?auto=format&fit=crop&w=500&h=350&q=80',
     alt: 'Full kitchen cabinet installation with soft-close hinges and clean white shaker doors',
     badge: 'Kitchen Cabinets',
     description: 'Full kitchen cabinet installation with soft-close hinges and flush finish.',
@@ -39,7 +40,7 @@ const projects = [
   },
 ]
 
-const scrollTo = () => {
+const scrollToContact = () => {
   const el = document.querySelector('#contact')
   if (el) el.scrollIntoView({ behavior: 'smooth' })
 }
@@ -53,7 +54,6 @@ export default function ProjectShowcase() {
     <section id="projects" className="w-full bg-white py-20 lg:py-24">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
-        {/* Heading */}
         <div
           ref={headingRef}
           className={`text-center mb-12 fade-up ${headingVisible ? 'visible' : ''}`}
@@ -69,7 +69,6 @@ export default function ProjectShowcase() {
           </p>
         </div>
 
-        {/* Project grid */}
         <div ref={gridRef} className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {projects.map(({ image, alt, badge, description }, i) => (
             <article
@@ -86,13 +85,11 @@ export default function ProjectShowcase() {
                   height="350"
                   loading="lazy"
                 />
-                {/* Hover overlay */}
                 <div className="absolute inset-0 bg-[#2B1D16]/55 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
                   <span className="text-white text-sm font-semibold border border-white/80 rounded-full px-5 py-2 backdrop-blur-sm">
                     View Details
                   </span>
                 </div>
-                {/* Badge */}
                 <span className="absolute top-3 left-3 bg-amber-700 text-white text-xs font-semibold px-3 py-1 rounded-full shadow-md">
                   {badge}
                 </span>
@@ -104,18 +101,18 @@ export default function ProjectShowcase() {
           ))}
         </div>
 
-        {/* CTA below grid */}
+        {/* CTA — honest label: scrolls to contact form rather than a non-existent page */}
         <div
           ref={ctaRef}
           className={`text-center mt-10 fade-up ${ctaVisible ? 'visible' : ''}`}
         >
-          <p className="text-stone-600 mb-4">Want to see more of our work?</p>
+          <p className="text-stone-600 mb-4">Like what you see? Let&apos;s talk about your project.</p>
           <a
             href="#contact"
-            onClick={(e) => { e.preventDefault(); scrollTo() }}
-            className="inline-flex items-center justify-center px-8 py-3 border-2 border-amber-700 text-amber-700 hover:bg-amber-50 font-semibold rounded-xl transition-colors duration-150 min-h-[44px]"
+            onClick={(e) => { e.preventDefault(); scrollToContact() }}
+            className="inline-flex items-center justify-center px-8 py-3 border-2 border-amber-700 text-amber-700 hover:bg-amber-50 font-semibold rounded-full transition-colors duration-150 min-h-[44px]"
           >
-            View All Projects
+            Request a Project Quote
           </a>
         </div>
       </div>

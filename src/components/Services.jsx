@@ -65,24 +65,30 @@ export default function Services() {
     <section id="services" className="w-full bg-white py-20 lg:py-24">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
-        {/* Heading */}
         <div
           ref={headingRef}
           className={`text-center mb-12 fade-up ${headingVisible ? 'visible' : ''}`}
         >
+          {/* Location keyword in H2 improves local SEO */}
           <h2
             className="text-3xl sm:text-4xl font-bold text-[#2B1D16] mb-3"
             style={{ fontFamily: "'DM Serif Display', Georgia, serif" }}
           >
-            Our Carpentry Services
+            Carpentry Services in [City] &amp; Surrounding Areas
           </h2>
           <p className="text-stone-500 text-base sm:text-lg max-w-xl mx-auto">
             Skilled craftsmanship for every wood project — big or small.
           </p>
         </div>
 
-        {/* Cards grid */}
-        <div ref={gridRef} className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        {/*
+          auto-fill grid: cards never overflow at any viewport width.
+          Each card is min 260px wide; extras wrap to new rows naturally.
+        */}
+        <div
+          ref={gridRef}
+          style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(260px, 1fr))', gap: '1.5rem' }}
+        >
           {services.map(({ icon: Icon, title, description }, i) => (
             <article
               key={title}

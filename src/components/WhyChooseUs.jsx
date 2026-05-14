@@ -41,7 +41,6 @@ export default function WhyChooseUs() {
     <section id="why-us" className="wood-grain-bg relative w-full py-20 lg:py-24">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
-        {/* Section heading */}
         <div
           ref={headingRef}
           className={`text-center mb-12 fade-up ${headingVisible ? 'visible' : ''}`}
@@ -59,21 +58,20 @@ export default function WhyChooseUs() {
 
         <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-16">
 
-          {/* Left — real carpentry photo */}
+          {/* Left — carpenter consulting a client */}
           <div
             ref={imgRef}
             className={`w-full lg:w-5/12 flex-shrink-0 fade-left ${imgVisible ? 'visible' : ''}`}
           >
             <div className="relative rounded-2xl overflow-hidden shadow-xl">
               <img
-                src="https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?auto=format&fit=crop&w=560&h=560&q=80"
-                alt="A beautifully finished custom wooden cabinet installation with brass hardware in a modern kitchen"
+                src="https://images.unsplash.com/photo-1581578731548-c64695cc6952?auto=format&fit=crop&w=560&h=560&q=80"
+                alt="A carpenter in a hi-vis vest consulting with a homeowner over building plans at a worksite"
                 className="w-full h-auto object-cover block"
                 width="560"
                 height="560"
                 loading="lazy"
               />
-              {/* Warm tint to match palette */}
               <div className="absolute inset-0 bg-amber-900/8 pointer-events-none" aria-hidden="true" />
             </div>
           </div>

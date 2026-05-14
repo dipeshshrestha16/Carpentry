@@ -12,8 +12,17 @@ import Footer from './components/Footer'
 export default function App() {
   return (
     <div className="w-full">
+      {/* Skip-to-content for keyboard / screen-reader users (WCAG 2.1 AA) */}
+      <a
+        href="#main-content"
+        className="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[9999] focus:px-5 focus:py-2.5 focus:bg-amber-700 focus:text-white focus:rounded-full focus:font-semibold focus:shadow-lg"
+      >
+        Skip to main content
+      </a>
+
       <Navbar />
-      <main>
+
+      <main id="main-content">
         <Hero />
         <Services />
         <WhyChooseUs />
@@ -23,6 +32,7 @@ export default function App() {
         <Testimonials />
         <ContactForm />
       </main>
+
       <Footer />
     </div>
   )

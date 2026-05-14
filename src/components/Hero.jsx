@@ -25,14 +25,11 @@ export default function Hero() {
 
           {/* Left — text content */}
           <div className="flex-1 text-center lg:text-left">
-
-            {/* Pre-headline badge */}
             <div className="hero-enter-1 inline-flex items-center gap-2 bg-amber-100 border border-amber-200 text-amber-800 text-sm font-medium px-4 py-1.5 rounded-full mb-6 badge-pulse">
               <span aria-hidden="true">🪵</span>
               Skilled Local Carpenters — Quality You Can See
             </div>
 
-            {/* Headline */}
             <h1
               className="hero-enter-2 text-4xl sm:text-5xl lg:text-6xl font-bold text-[#2B1D16] leading-tight mb-5"
               style={{ fontFamily: "'DM Serif Display', Georgia, serif" }}
@@ -42,14 +39,12 @@ export default function Hero() {
               Your Home
             </h1>
 
-            {/* Subtitle */}
             <p className="hero-enter-3 text-base sm:text-lg text-stone-600 leading-relaxed mb-8 max-w-xl mx-auto lg:mx-0">
               From bespoke furniture to full kitchen cabinets, CraftWood Co. delivers precision,
               quality, and craftsmanship to homes and offices across the area.
             </p>
 
-            {/* CTAs */}
-            <div className="hero-enter-4 flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 mb-10">
+            <div className="hero-enter-4 flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 mb-6">
               <a
                 href="#contact"
                 onClick={(e) => { e.preventDefault(); scrollTo('#contact') }}
@@ -67,7 +62,6 @@ export default function Hero() {
               </a>
             </div>
 
-            {/* Phone */}
             <a
               href="tel:+15559876543"
               className="hero-enter-4 inline-flex items-center gap-2 text-[#5C4033] font-semibold hover:text-amber-700 transition-colors mb-10"
@@ -94,18 +88,18 @@ export default function Hero() {
             </div>
           </div>
 
-          {/* Right — hero image with real carpenter photo */}
+          {/* Right — premium finished carpentry photo */}
           <div className="hero-enter-img flex-1 w-full max-w-lg lg:max-w-none">
             <div className="relative rounded-2xl overflow-hidden shadow-xl">
               <img
-                src="https://images.unsplash.com/photo-1504148455328-c376907d081c?auto=format&fit=crop&w=600&h=500&q=80"
-                alt="A skilled carpenter carefully shaping and measuring a piece of hardwood in a well-lit workshop"
+                src="https://images.unsplash.com/photo-1588854337221-4cf9fa96059c?auto=format&fit=crop&w=600&h=500&q=85"
+                alt="A beautifully finished custom hardwood cabinet with dovetail joinery and rich walnut stain"
                 className="w-full h-auto object-cover block"
                 width="600"
                 height="500"
                 loading="eager"
+                fetchPriority="high"
               />
-              {/* Subtle warm overlay to blend with site palette */}
               <div className="absolute inset-0 bg-amber-900/10 pointer-events-none" aria-hidden="true" />
 
               {/* Floating badge */}

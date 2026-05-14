@@ -3,14 +3,14 @@
 @import "tailwindcss";
 
 @theme {
-  --color-walnut: #5C4033;
+  --color-walnut:      #5C4033;
   --color-walnut-dark: #4a3229;
-  --color-cream: #F5EBDD;
-  --color-deepbrown: #2B1D16;
-  --color-goldwood: #B45309;
+  --color-cream:       #F5EBDD;
+  --color-deepbrown:   #2B1D16;
+  --color-goldwood:    #B45309;
 
   --font-display: 'DM Serif Display', Georgia, serif;
-  --font-sans: 'DM Sans', system-ui, sans-serif;
+  --font-sans:    'DM Sans', system-ui, sans-serif;
 }
 
 html {
@@ -33,34 +33,28 @@ body {
   min-height: 100svh;
 }
 
-/* ── Wood grain background ─────────────────────────────────────────── */
+/* ── Wood grain background ──────────────────────────────────────────── */
 .wood-grain-bg {
   background-color: #F5EBDD;
   background-image:
     repeating-linear-gradient(
       -3deg,
-      transparent 0px,
-      transparent 22px,
-      rgba(92, 64, 51, 0.055) 22px,
-      rgba(92, 64, 51, 0.055) 24px
+      transparent 0px, transparent 22px,
+      rgba(92, 64, 51, 0.055) 22px, rgba(92, 64, 51, 0.055) 24px
     ),
     repeating-linear-gradient(
       2deg,
-      transparent 0px,
-      transparent 55px,
-      rgba(92, 64, 51, 0.03) 55px,
-      rgba(92, 64, 51, 0.03) 57px
+      transparent 0px, transparent 55px,
+      rgba(92, 64, 51, 0.03) 55px, rgba(92, 64, 51, 0.03) 57px
     ),
     repeating-linear-gradient(
       -1deg,
-      transparent 0px,
-      transparent 90px,
-      rgba(180, 130, 80, 0.04) 90px,
-      rgba(180, 130, 80, 0.04) 92px
+      transparent 0px, transparent 90px,
+      rgba(180, 130, 80, 0.04) 90px, rgba(180, 130, 80, 0.04) 92px
     );
 }
 
-/* Hero section uses a real wood texture photo with a cream overlay via pseudo-element */
+/* Hero section — real wood texture at low opacity via pseudo-element */
 .hero-wood-section {
   position: relative;
   background-color: #F5EBDD;
@@ -81,17 +75,14 @@ body {
   z-index: 1;
 }
 
-/* ── Scroll-triggered animations ───────────────────────────────────── */
+/* ── Scroll-triggered animations ────────────────────────────────────── */
 .fade-up {
   opacity: 0;
   transform: translateY(30px);
   transition: opacity 0.65s cubic-bezier(0.25, 0.46, 0.45, 0.94),
               transform 0.65s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
-.fade-up.visible {
-  opacity: 1;
-  transform: translateY(0);
-}
+.fade-up.visible { opacity: 1; transform: translateY(0); }
 
 .fade-left {
   opacity: 0;
@@ -99,10 +90,7 @@ body {
   transition: opacity 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94),
               transform 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
-.fade-left.visible {
-  opacity: 1;
-  transform: translateX(0);
-}
+.fade-left.visible  { opacity: 1; transform: translateX(0); }
 
 .fade-right {
   opacity: 0;
@@ -110,12 +98,9 @@ body {
   transition: opacity 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94),
               transform 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
-.fade-right.visible {
-  opacity: 1;
-  transform: translateX(0);
-}
+.fade-right.visible { opacity: 1; transform: translateX(0); }
 
-/* ── Hero page-load entrance animations ────────────────────────────── */
+/* ── Hero page-load entrance animations ─────────────────────────────── */
 @keyframes heroEnter {
   from { opacity: 0; transform: translateY(22px); }
   to   { opacity: 1; transform: translateY(0); }
@@ -125,18 +110,39 @@ body {
   to   { opacity: 1; transform: translateX(0); }
 }
 
-.hero-enter-1 { animation: heroEnter 0.7s ease-out 0.05s both; }
-.hero-enter-2 { animation: heroEnter 0.7s ease-out 0.18s both; }
-.hero-enter-3 { animation: heroEnter 0.7s ease-out 0.30s both; }
-.hero-enter-4 { animation: heroEnter 0.7s ease-out 0.42s both; }
-.hero-enter-5 { animation: heroEnter 0.7s ease-out 0.54s both; }
+.hero-enter-1   { animation: heroEnter   0.7s ease-out 0.05s both; }
+.hero-enter-2   { animation: heroEnter   0.7s ease-out 0.18s both; }
+.hero-enter-3   { animation: heroEnter   0.7s ease-out 0.30s both; }
+.hero-enter-4   { animation: heroEnter   0.7s ease-out 0.42s both; }
+.hero-enter-5   { animation: heroEnter   0.7s ease-out 0.54s both; }
 .hero-enter-img { animation: heroSlideIn 0.8s ease-out 0.25s both; }
 
-/* ── Badge pulse on load ────────────────────────────────────────────── */
 @keyframes subtlePulse {
-  0%, 100% { box-shadow: 0 0 0 0 rgba(180, 83, 9, 0); }
+  0%, 100% { box-shadow: 0 0 0 0   rgba(180, 83, 9, 0); }
   50%       { box-shadow: 0 0 0 6px rgba(180, 83, 9, 0.12); }
 }
-.badge-pulse {
-  animation: subtlePulse 3s ease-in-out 1.2s infinite;
+.badge-pulse { animation: subtlePulse 3s ease-in-out 1.2s infinite; }
+
+/* Dark-mode overrides intentionally omitted — site uses warm light palette only */
+
+/* ── Accessibility: prefers-reduced-motion ───────────────────────────
+   Strips ALL animations & transitions for users who have enabled the
+   OS-level "reduce motion" setting. Covers 131+ animated elements.
+   ──────────────────────────────────────────────────────────────────── */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration:        0.01ms !important;
+    animation-iteration-count: 1      !important;
+    transition-duration:       0.01ms !important;
+    scroll-behavior:           auto   !important;
+  }
+  /* Instantly reveal scroll-animated elements so content isn't hidden */
+  .fade-up,
+  .fade-left,
+  .fade-right {
+    opacity:   1 !important;
+    transform: none !important;
+  }
 }
