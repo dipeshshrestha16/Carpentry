@@ -1,0 +1,142 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&display=swap');
+
+@import "tailwindcss";
+
+@theme {
+  --color-walnut: #5C4033;
+  --color-walnut-dark: #4a3229;
+  --color-cream: #F5EBDD;
+  --color-deepbrown: #2B1D16;
+  --color-goldwood: #B45309;
+
+  --font-display: 'DM Serif Display', Georgia, serif;
+  --font-sans: 'DM Sans', system-ui, sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'DM Sans', system-ui, sans-serif;
+  color: #2B1D16;
+  background-color: #ffffff;
+  margin: 0;
+  padding: 0;
+}
+
+#root {
+  width: 100%;
+  max-width: 100%;
+  text-align: left;
+  border: none;
+  min-height: 100svh;
+}
+
+/* ── Wood grain background ─────────────────────────────────────────── */
+.wood-grain-bg {
+  background-color: #F5EBDD;
+  background-image:
+    repeating-linear-gradient(
+      -3deg,
+      transparent 0px,
+      transparent 22px,
+      rgba(92, 64, 51, 0.055) 22px,
+      rgba(92, 64, 51, 0.055) 24px
+    ),
+    repeating-linear-gradient(
+      2deg,
+      transparent 0px,
+      transparent 55px,
+      rgba(92, 64, 51, 0.03) 55px,
+      rgba(92, 64, 51, 0.03) 57px
+    ),
+    repeating-linear-gradient(
+      -1deg,
+      transparent 0px,
+      transparent 90px,
+      rgba(180, 130, 80, 0.04) 90px,
+      rgba(180, 130, 80, 0.04) 92px
+    );
+}
+
+/* Hero section uses a real wood texture photo with a cream overlay via pseudo-element */
+.hero-wood-section {
+  position: relative;
+  background-color: #F5EBDD;
+}
+.hero-wood-section::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: url("https://images.unsplash.com/photo-1542621334-a254cf47733d?auto=format&fit=crop&w=1920&q=60");
+  background-size: cover;
+  background-position: center;
+  opacity: 0.18;
+  pointer-events: none;
+  z-index: 0;
+}
+.hero-wood-section > * {
+  position: relative;
+  z-index: 1;
+}
+
+/* ── Scroll-triggered animations ───────────────────────────────────── */
+.fade-up {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.65s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+              transform 0.65s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+.fade-up.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.fade-left {
+  opacity: 0;
+  transform: translateX(-36px);
+  transition: opacity 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+              transform 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+.fade-left.visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.fade-right {
+  opacity: 0;
+  transform: translateX(36px);
+  transition: opacity 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+              transform 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+.fade-right.visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* ── Hero page-load entrance animations ────────────────────────────── */
+@keyframes heroEnter {
+  from { opacity: 0; transform: translateY(22px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes heroSlideIn {
+  from { opacity: 0; transform: translateX(30px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+
+.hero-enter-1 { animation: heroEnter 0.7s ease-out 0.05s both; }
+.hero-enter-2 { animation: heroEnter 0.7s ease-out 0.18s both; }
+.hero-enter-3 { animation: heroEnter 0.7s ease-out 0.30s both; }
+.hero-enter-4 { animation: heroEnter 0.7s ease-out 0.42s both; }
+.hero-enter-5 { animation: heroEnter 0.7s ease-out 0.54s both; }
+.hero-enter-img { animation: heroSlideIn 0.8s ease-out 0.25s both; }
+
+/* ── Badge pulse on load ────────────────────────────────────────────── */
+@keyframes subtlePulse {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(180, 83, 9, 0); }
+  50%       { box-shadow: 0 0 0 6px rgba(180, 83, 9, 0.12); }
+}
+.badge-pulse {
+  animation: subtlePulse 3s ease-in-out 1.2s infinite;
+}
