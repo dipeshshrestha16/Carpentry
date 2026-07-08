@@ -304,11 +304,11 @@ export default function ContactForm() {
                   <div>
                     <p className="text-xs text-stone-500 font-medium mb-0.5">Phone</p>
                     <a
-                      href="tel:+15559876543"
+                      href="tel:"
                       className="text-lg font-bold text-[#5C4033] hover:text-amber-700 transition-colors"
-                      aria-label="Call us at (555) 987-6543"
+                      aria-label="Call us"
                     >
-                      (555) 987-6543
+                      Telephone Number
                     </a>
                   </div>
                 </li>
@@ -320,10 +320,10 @@ export default function ContactForm() {
                   <div>
                     <p className="text-xs text-stone-500 font-medium mb-0.5">Email</p>
                     <a
-                      href="mailto:hello@craftwoodco.com"
+                      href="mailto:reachout@bigroostech.com"
                       className="text-sm font-semibold text-[#5C4033] hover:text-amber-700 transition-colors"
                     >
-                      hello@craftwoodco.com
+                      reachout@bigroostech.com
                     </a>
                   </div>
                 </li>

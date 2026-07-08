@@ -63,10 +63,11 @@ body {
   content: '';
   position: absolute;
   inset: 0;
-  background-image: url("https://images.unsplash.com/photo-1542621334-a254cf47733d?auto=format&fit=crop&w=1920&q=60");
+  background-image: url("https://images.pexels.com/photos/5974408/pexels-photo-5974408.jpeg?_gl=1*rrzfd3*_ga*MTIzMzk0ODI2NC4xNzc5MzQxODQw*_ga_8JE65Q40S6*czE3NzkzNDE4NDAkbzEkZzEkdDE3NzkzNDQxODckajYwJGwwJGgw");
   background-size: cover;
   background-position: center;
-  opacity: 0.18;
+  /* increased from 0.15 to make the wood texture darker/less smoky */
+  opacity: 0.20;
   pointer-events: none;
   z-index: 0;
 }
@@ -125,6 +126,18 @@ body {
 
 /* Dark-mode overrides intentionally omitted — site uses warm light palette only */
 
+/* ── Testimonials auto-scroll carousel ──────────────────────────────── */
+@keyframes carousel-scroll {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+.carousel-track {
+  animation: carousel-scroll 32s linear infinite;
+}
+.carousel-track:hover {
+  animation-play-state: paused;
+}
+
 /* ── Accessibility: prefers-reduced-motion ───────────────────────────
    Strips ALL animations & transitions for users who have enabled the
    OS-level "reduce motion" setting. Covers 131+ animated elements.
@@ -144,5 +157,9 @@ body {
   .fade-right {
     opacity:   1 !important;
     transform: none !important;
+  }
+  /* Stop carousel auto-scroll */
+  .carousel-track {
+    animation: none !important;
   }
 }

@@ -46,19 +46,19 @@ export default function Footer() {
               Skilled local carpenters delivering quality woodwork, custom furniture, and reliable installations to homes and offices across the area.
             </p>
             <a
-              href="tel:+15559876543"
+              href="tel:"
               className="flex items-center gap-2 text-white font-bold text-xl hover:text-amber-400 transition-colors mb-2"
-              aria-label="Call us at (555) 987-6543"
+              aria-label="Call us"
             >
               <Phone className="w-5 h-5 text-amber-400" aria-hidden="true" />
-              (555) 987-6543
+              Telephone Number
             </a>
             <a
-              href="mailto:hello@craftwoodco.com"
+              href="mailto:reachout@bigroostech.com"
               className="flex items-center gap-2 text-stone-400 text-sm hover:text-amber-400 transition-colors"
             >
               <Mail className="w-4 h-4" aria-hidden="true" />
-              hello@craftwoodco.com
+              reachout@bigroostech.com
             </a>
           </div>
 

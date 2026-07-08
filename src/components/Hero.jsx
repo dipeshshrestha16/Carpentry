@@ -26,7 +26,7 @@ export default function Hero() {
           {/* Left — text content */}
           <div className="flex-1 text-center lg:text-left">
             <div className="hero-enter-1 inline-flex items-center gap-2 bg-amber-100 border border-amber-200 text-amber-800 text-sm font-medium px-4 py-1.5 rounded-full mb-6 badge-pulse">
-              <span aria-hidden="true">🪵</span>
+              <span aria-hidden="true"></span>
               Skilled Local Carpenters — Quality You Can See
             </div>
 
@@ -35,7 +35,7 @@ export default function Hero() {
               style={{ fontFamily: "'DM Serif Display', Georgia, serif" }}
             >
               Custom Carpentry{' '}
-              <span className="text-[#5C4033]">Crafted For</span>{' '}
+              <span className="text-[#B45309]">Crafted For</span>{' '}
               Your Home
             </h1>
 
@@ -63,12 +63,12 @@ export default function Hero() {
             </div>
 
             <a
-              href="tel:+15559876543"
+              href="tel:"
               className="hero-enter-4 inline-flex items-center gap-2 text-[#5C4033] font-semibold hover:text-amber-700 transition-colors mb-10"
-              aria-label="Call us at (555) 987-6543"
+              aria-label="Call us"
             >
               <Phone className="w-4 h-4" aria-hidden="true" />
-              (555) 987-6543 — Call us today
+              Telephone Number — Call us today
             </a>
 
             {/* Trust badges */}

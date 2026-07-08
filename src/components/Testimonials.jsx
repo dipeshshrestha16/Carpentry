@@ -40,6 +40,9 @@ const testimonials = [
   },
 ]
 
+// Duplicate so the CSS -50% translate creates a seamless loop
+const doubled = [...testimonials, ...testimonials]
+
 function StarRating() {
   return (
     <div className="flex gap-0.5 mb-3" aria-label="5 out of 5 stars">
@@ -52,13 +55,12 @@ function StarRating() {
 
 export default function Testimonials() {
   const [headingRef, headingVisible] = useScrollAnimation()
-  const [gridRef, gridVisible] = useScrollAnimation(0.05)
 
   return (
     <section id="testimonials" className="w-full bg-white py-20 lg:py-24">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
-        {/* Heading */}
+      {/* Heading — inside max-width container */}
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div
           ref={headingRef}
           className={`text-center mb-12 fade-up ${headingVisible ? 'visible' : ''}`}
@@ -67,20 +69,45 @@ export default function Testimonials() {
             className="text-3xl sm:text-4xl font-bold text-[#2B1D16] mb-3"
             style={{ fontFamily: "'DM Serif Display', Georgia, serif" }}
           >
-            What Our Customers Say
+            What <span className="text-[#B45309]">Our Customers</span> Say
           </h2>
           <p className="text-stone-500 text-base sm:text-lg max-w-xl mx-auto">
             Real feedback from real homeowners and businesses.
           </p>
         </div>
+      </div>
 
-        {/* Reviews grid */}
-        <div ref={gridRef} className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-          {testimonials.map(({ text, name, location, date }, i) => (
+      {/* Edge-to-edge carousel */}
+      <div className="relative overflow-hidden">
+
+        {/* Left fade overlay */}
+        <div
+          className="absolute left-0 top-0 bottom-0 w-24 z-10 pointer-events-none"
+          style={{ background: 'linear-gradient(to right, #ffffff, transparent)' }}
+          aria-hidden="true"
+        />
+        {/* Right fade overlay */}
+        <div
+          className="absolute right-0 top-0 bottom-0 w-24 z-10 pointer-events-none"
+          style={{ background: 'linear-gradient(to left, #ffffff, transparent)' }}
+          aria-hidden="true"
+        />
+
+        {/*
+          Track: each card has a fixed width + right margin.
+          With 12 cards total (6 × 2), translateX(-50%) = exactly 6 card-widths,
+          creating a perfectly seamless infinite loop.
+        */}
+        <div
+          className="carousel-track flex py-3 pl-6"
+          aria-label="Customer testimonials carousel"
+        >
+          {doubled.map(({ text, name, location, date }, i) => (
             <article
-              key={name}
-              className={`bg-white border border-stone-100 rounded-2xl p-6 shadow-sm hover:shadow-md transition-all duration-200 flex flex-col fade-up ${gridVisible ? 'visible' : ''}`}
-              style={{ transitionDelay: `${i * 80}ms` }}
+              key={i}
+              aria-hidden={i >= testimonials.length}
+              className="bg-white border border-stone-100 rounded-2xl p-6 shadow-sm flex flex-col flex-shrink-0"
+              style={{ width: '340px', marginRight: '24px' }}
             >
               <StarRating />
               <blockquote className="text-stone-700 text-sm leading-relaxed flex-1 mb-4">
@@ -97,6 +124,7 @@ export default function Testimonials() {
           ))}
         </div>
       </div>
+
     </section>
   )
 }

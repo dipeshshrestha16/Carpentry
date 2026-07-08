@@ -62,7 +62,7 @@ export default function ProjectShowcase() {
             className="text-3xl sm:text-4xl font-bold text-[#2B1D16] mb-3"
             style={{ fontFamily: "'DM Serif Display', Georgia, serif" }}
           >
-            Our Recent Work
+            Our Recent <span className="text-[#B45309]">Work</span>
           </h2>
           <p className="text-stone-500 text-base sm:text-lg max-w-xl mx-auto">
             A sample of the craftsmanship we bring to every project.

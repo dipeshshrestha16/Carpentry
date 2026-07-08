@@ -74,7 +74,7 @@ export default function Services() {
             className="text-3xl sm:text-4xl font-bold text-[#2B1D16] mb-3"
             style={{ fontFamily: "'DM Serif Display', Georgia, serif" }}
           >
-            Carpentry Services in [City] &amp; Surrounding Areas
+            Carpentry <span className="text-[#B45309]">Services</span> in [City] &amp; Surrounding Areas
           </h2>
           <p className="text-stone-500 text-base sm:text-lg max-w-xl mx-auto">
             Skilled craftsmanship for every wood project — big or small.

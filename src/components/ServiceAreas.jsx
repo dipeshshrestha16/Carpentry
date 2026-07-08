@@ -39,7 +39,7 @@ export default function ServiceAreas() {
             className="text-3xl sm:text-4xl font-bold text-[#2B1D16] mb-3"
             style={{ fontFamily: "'DM Serif Display', Georgia, serif" }}
           >
-            We Work Across Your Local Area
+            We Work Across Your <span className="text-[#B45309]">Local Area</span>
           </h2>
           <p className="text-stone-600 text-base sm:text-lg max-w-xl mx-auto">
             CraftWood Co. provides carpentry services throughout the city and surrounding suburbs.
@@ -66,12 +66,12 @@ export default function ServiceAreas() {
             Not sure if we cover your area? Give us a call — we will let you know.
           </p>
           <a
-            href="tel:+15559876543"
+            href="tel:"
             className="inline-flex items-center gap-2 font-semibold text-amber-700 hover:text-amber-800 transition-colors"
-            aria-label="Call us at (555) 987-6543"
+            aria-label="Call us"
           >
             <Phone className="w-4 h-4" aria-hidden="true" />
-            Call Now — (555) 987-6543
+            Call Now — Telephone Number
           </a>
         </div>
       </div>

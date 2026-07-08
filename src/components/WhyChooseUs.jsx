@@ -49,7 +49,7 @@ export default function WhyChooseUs() {
             className="text-3xl sm:text-4xl font-bold text-[#2B1D16] mb-3"
             style={{ fontFamily: "'DM Serif Display', Georgia, serif" }}
           >
-            Why Homeowners Choose CraftWood
+            Why Homeowners <span className="text-[#B45309]">Choose</span> CraftWood
           </h2>
           <p className="text-stone-600 text-base sm:text-lg">
             We bring skill, honesty, and care to every job.

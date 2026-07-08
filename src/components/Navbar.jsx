@@ -23,7 +23,7 @@ export default function Navbar() {
 
   return (
     <nav
-      className="sticky top-0 z-50 w-full bg-stone-50 border-b border-stone-200"
+      className="w-full bg-stone-50 border-b border-stone-200"
       aria-label="Main navigation"
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -50,7 +50,7 @@ export default function Navbar() {
                 key={link.href}
                 href={link.href}
                 onClick={(e) => handleNavClick(e, link.href)}
-                className="px-3 py-2 text-sm font-medium text-stone-600 hover:text-[#5C4033] hover:bg-amber-50 rounded-lg transition-colors duration-150"
+                className="px-3 py-2 text-sm font-medium text-stone-600 hover:text-[#5C4033] hover:font-bold hover:bg-amber-100 hover:scale-[1.1] rounded-lg transition-all duration-150 inline-block"
               >
                 {link.label}
               </a>
@@ -60,12 +60,12 @@ export default function Navbar() {
           {/* Desktop right side */}
           <div className="hidden lg:flex items-center gap-4">
             <a
-              href="tel:+15559876543"
+              href="tel:"
               className="flex items-center gap-1.5 text-sm font-semibold text-[#5C4033] hover:text-amber-700 transition-colors"
-              aria-label="Call us at (555) 987-6543"
+              aria-label="Call us"
             >
               <Phone className="w-4 h-4" aria-hidden="true" />
-              (555) 987-6543
+              Telephone Number
             </a>
             <a
               href="#contact"
@@ -79,12 +79,12 @@ export default function Navbar() {
           {/* Mobile: phone + hamburger */}
           <div className="flex lg:hidden items-center gap-3">
             <a
-              href="tel:+15559876543"
+              href="tel:"
               className="flex items-center gap-1 text-sm font-semibold text-[#5C4033]"
               aria-label="Call us"
             >
               <Phone className="w-4 h-4" aria-hidden="true" />
-              <span className="hidden sm:inline">(555) 987-6543</span>
+              <span className="hidden sm:inline">Telephone Number</span>
             </a>
             <button
               onClick={() => setMobileOpen(!mobileOpen)}

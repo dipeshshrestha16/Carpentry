@@ -1,4 +1,5 @@
 import Navbar from './components/Navbar'
+import TopBanner from './components/TopBanner'
 import Hero from './components/Hero'
 import Services from './components/Services'
 import WhyChooseUs from './components/WhyChooseUs'
@@ -20,7 +21,11 @@ export default function App() {
         Skip to main content
       </a>
 
-      <Navbar />
+      {/* Sticky header: top banner + main nav together */}
+      <div className="sticky top-0 z-50">
+        <TopBanner />
+        <Navbar />
+      </div>
 
       <main id="main-content">
         <Hero />
