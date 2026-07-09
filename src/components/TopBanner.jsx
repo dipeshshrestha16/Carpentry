@@ -30,7 +30,7 @@ export default function TopBanner() {
 
           {/* Left — logo + brand name */}
           <a
-            href="https://bigroostech.com.au"
+            href="https://bigroostech.com"
             target="_blank"
             rel="noopener noreferrer"
             className="flex items-center gap-2 shrink-0 group"
@@ -60,7 +60,7 @@ export default function TopBanner() {
           {/* Right — CTA */}
           <div className="flex items-center shrink-0">
             <a
-              href="https://bigroostech.com.au"
+              href="https://bigroostech.com"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-1.5 text-sm font-semibold px-4 py-2 rounded-full border transition-all duration-200 hover:scale-[1.04] whitespace-nowrap"
